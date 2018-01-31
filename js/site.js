@@ -251,11 +251,11 @@ function OtherProload(e) {
 	o.width = o.height = 0;
 	document.body.appendChild(o);
 }
-const isIE = navigator.appName.indexOf('Microsoft') === 0;
+const isIE = typeof InstallTrigger === 'undefined';
 
 const proLoadMethod = isIE ? IEProload : OtherProload;
 
 ["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
-	e = `../blog/js/${e}.min.js?v=1.0`;
+	e = `${window.location.href}/blog/js/${e}.min.js?v=1.0`;
 	proLoadMethod(e);
 })
