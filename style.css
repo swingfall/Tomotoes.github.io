@@ -30,7 +30,7 @@ a:hover{color: #fff; text-decoration: underline;}
 }
 #card header img{position: absolute; left: 0; top: 0; padding: 2px; box-shadow: 0 0 2px rgba(0,0,0,.3); background: rgba(255,255,255,.6);}
 #card h1,#card h2{margin: 0; font-weight: normal;transform: translateY(-10px)}
-#card h2{margin-top: 0.1em; font-size: 1.1em;text-shadow: #9e9e9e 0 0 1px;}
+#card h2{margin-top: 0.1em; font-size: 1.1em;text-shadow: #f0eaea 0 0 1px;}
 #card ul{position: relative; padding: 0;
 	-webkit-transition: width ease .5s, height ease .5s;
 	-moz-transition: width ease .5s, height ease .5s;
