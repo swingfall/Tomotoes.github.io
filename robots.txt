@@ -1,12 +1,11 @@
 User-agent: *
 Allow: /
-Allow: /categories/
-Allow: /tags/
-Allow: /about/
-Allow: /posts/
-Allow: /archives/
-Disallow: /js/
-Disallow: /css/
+Allow: /blog/categories/
+Allow: /blog/tags/
+Allow: /blog/posts/
+Allow: /blog/archives/
+Disallow: /blog/js/
+Disallow: /blog/css/
 
 Sitemap: http://tomotoes.com/baidusitemap.xml
 Sitemap: http://tomotoes.com/sitemap.xml

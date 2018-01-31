@@ -353,7 +353,7 @@ elf(function () {
 	}
 	site.Translation.translate(navigator.language || "zh-CN");
 
-	elf("a.mail").attr("href", elf().template("mailto:#{0}@#{1}", "mytharcher", "gmail.com"));
+	elf("a.mail").attr("href", elf().template("mailto:#{0}@#{1}", "SimonMa", "gmail.com"));
 
 	let module = document.body.className.replace(/page-type-/g, "").split(" ");
 	module.forEach(function (item) {
