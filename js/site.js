@@ -27,9 +27,6 @@ elf().getPosition = elf.dom.BoxModel.getPosition = js.dom.BoxModel.getPosition =
 				}
 			}
 		}
-		//避免ie和ff计算body的offsetLeft不一致
-//		pos.x = el.offsetLeft - node.offsetLeft;//-(parseInt(cStyle.marginLeft)||0);
-//		pos.y = el.offsetTop - node.offsetTop;//-(parseInt(cStyle.marginTop)||0);
 		if (cStyle.position == "static" && el.currentStyle) {
 			pos.x += (parseInt(document.body.currentStyle.marginLeft, 10) || 0) * 2;
 			pos.y += (parseInt(document.body.currentStyle.marginTop, 10) || 0) * 2;
@@ -87,7 +84,6 @@ var site = {
 		index: function () {
 			function getDayLight() {
 				let time = new Date();
-				// time.setHours(17);
 				let hour = time.getHours() - 12;
 				let factor = hour ? Math.abs(hour) / hour : 1;
 				hour = hour + (time.getMinutes() * 60 + time.getSeconds()) / 3600;
@@ -104,7 +100,6 @@ var site = {
 				textColorBase = 0x4d;
 				textColorDelta = 0x80;
 				textColor = Math.round(textColorBase + textColorDelta * getDayLight());
-				// console.log(textColor);
 				elf("#card header").css("color", `rgb(${ textColor },${ textColor },${ textColor })`);
 			}
 
@@ -347,7 +342,7 @@ elf(function () {
 	}
 	site.Translation.translate(navigator.language || "zh-CN");
 
-	elf("a.mail").attr("href", elf().template("mailto:#{0}@#{1}", "SimonMa", "gmail.com"));
+	elf("a.mail").attr("href", elf().template("mailto:#{0}@#{1}", "jinmaup", "gmail.com"));
 
 	let module = document.body.className.replace(/page-type-/g, "").split(" ");
 	module.forEach(function (item) {
