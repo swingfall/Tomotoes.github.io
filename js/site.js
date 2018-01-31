@@ -3,8 +3,6 @@ elf().getPosition = elf.dom.BoxModel.getPosition = js.dom.BoxModel.getPosition =
 	let pos = {x: 0, y: 0};
 	
 	let cStyle = el.currentStyle || document.defaultView.getComputedStyle(el, null);
-	
-	// var layoutBWX = 0, layoutBWY = 0;
 	let isWebkit = navigator.userAgent.match(/Chrome|Safari/);
 	
 	if (!refer) {
@@ -47,8 +45,8 @@ var site = {
 		lang: {
 			en: {
 				name: "Simon Ma",
-				title: "Web Engineer, Freelancer",
-				works: "Works",
+				title: "Hello, I am Simon, from the East",
+				works: "About",
 				blog: "Blog",
 				"google-plus": "+me",
 
