@@ -253,8 +253,4 @@ window.onload=function (){
 	}
 	
 	const proLoadMethod = typeof InstallTrigger === 'undefined' ? IEProload : OtherProload;
-	
-	["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
-		proLoadMethod(`${window.location.href}/blog/js/${e}.min.js`);
-	})
 }
