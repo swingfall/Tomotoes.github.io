@@ -69,18 +69,14 @@ a:hover{color: #fff; text-decoration: underline;}
 }
 #card li:hover i{opacity: 0; font-size: 10%;}
 #card li:hover span{display: block; top: 0; opacity: 1;}
-#link-works{left: 0; top: 0;}
-#link-works:hover{background-color: #39c;}
-#link-blog:hover{background-color: #d81;}
+#link-blog{left: 0; top: 0;}
+#link-blog:hover{background-color: #39c;}
+#link-about:hover{background-color: #d81;}
 #link-github:hover{background-color: #333;}
 #link-mail:hover{background-color: #595;}
 #link-wechat:hover img{display: block; top: 0; opacity: 1;}
-#link-sf:hover {background-color: #ee865d;}
-#link-plane:hover{background-color: rgb(235, 235, 235);}
-#link-plane:hover span{color: #888;font-size: 15px;font-weight: bold}
-#link-plane:hover .tip1{top: -1.5em;}
-#link-plane:hover .tip2{top: 0;}
-#link-plane:hover .tip3{top: 1.5em;}
+#link-stack-overflow:hover {background-color: #633688;}
+#link-weibo:hover{background-color: rgb(150, 60, 60);}
 
 li#link-wechat span{top: 0;}
 #card ul:after{content: ""; clear: both; display: block;}
@@ -89,12 +85,12 @@ li#link-wechat span{top: 0;}
 	#card{width: 725px;}
 	#card ul{width: 725px; height: 200px;}
 	#card header{position: absolute; top: -105px;}
-	#link-blog{left: 210px; top: 0;}
+	#link-about{left: 210px; top: 0;}
 	#link-mail{left: 420px; top: 0;}
 	#link-wechat{left: 630px; top: 0;}
 	#link-github{left: 420px; top: 105px;}
-	#link-sf{left: 525px; top: 105px;}
-	#link-plane{left: 630px; top: 105px;}
+	#link-stack-overflow{left: 525px; top: 105px;}
+	#link-weibo{left: 630px; top: 105px;}
 	#card ul{
 		-webkit-transition: width ease .5s;
 		-moz-transition: width ease .5s;
@@ -119,23 +115,23 @@ li#link-wechat span{top: 0;}
 @media (min-width: 551px) and (max-width: 800px) {
 	#card{width: 515px;}
 	#card ul{width: 515px; height: 305px;}
-	#link-blog{left: 210px; top: 0;}
+	#link-about{left: 210px; top: 0;}
 	li#link-mail.half{left: 0; top: 210px; width: 305px;}
 	#link-wechat{left: 315px; top: 210px;}
 	#link-github{left: 420px; top: 0;}
-	#link-sf{left: 420px; top: 105px;}
-	#link-plane{left: 420px; top: 210px;}
+	#link-stack-overflow{left: 420px; top: 105px;}
+	#link-weibo{left: 420px; top: 210px;}
 }
 
 @media (min-width: 451px) and (max-width: 550px) {
 	#card{width: 410px;}
 	#card ul{width: 410px; height: 410px;}
-	#link-blog{left: 210px; top: 0;}
+	#link-about{left: 210px; top: 0;}
 	li#link-mail.half{left: 0; top: 210px; width: 410px;}
 	#link-wechat{left: 210px; top: 315px;}
 	#link-github{left: 0; top: 315px;}
-	#link-sf{left: 105px; top: 315px;}
-	#link-plane{left: 315px; top: 315px;}
+	#link-stack-overflow{left: 105px; top: 315px;}
+	#link-weibo{left: 315px; top: 315px;}
 }
 @media (max-width: 480px){
 	#card,#card ul{
@@ -158,12 +154,12 @@ li#link-wechat span{top: 0;}
 		left: 0;
 		top: 0;
 	}
-	#link-blog{left: 51%; top: 0;}
+	#link-about{left: 51%; top: 0;}
 	li#link-mail.half{left: 0; top: 51%;}
 	#link-wechat{left: 51%; top: 76.5%;}
 	#link-github{left: 0%; top: 76.5%;}
-	#link-sf{left: 25.5%; top: 76.5%;}
-	#link-plane{left: 76.5%; top: 76.5%;}
+	#link-stack-overflow{left: 25.5%; top: 76.5%;}
+	#link-weibo{left: 76.5%; top: 76.5%;}
 }
 @media (max-width: 320px) {
 	#card li{line-height: 147px;}

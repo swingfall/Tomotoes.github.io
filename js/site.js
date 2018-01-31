@@ -234,3 +234,36 @@ elf(function () {
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
 });
+
+window.onload = function () {
+ 
+    var i = 0,
+        max = 0,
+        o = null,
+ 
+        preload = [
+            '/blog/js/jquery.min.js?v=1.0',
+            '/blog/js/live.min.js?v=1.0',
+            '/blog/js/live2d.min.js?v=1.0',
+            '/blog/js/main.min.js?v=1.0',
+            '/blog/js/script.min.js?v=1.0',
+            '/blog/js/wave.min.js?v=1.0'
+        ],
+        isIE = navigator.appName.indexOf('Microsoft') === 0;
+ 
+    for (i = 0, max = preload.length; i < max; i += 1) {
+        preload[i] = window.location.href + preload[i];
+        if (isIE) {
+            new Image().src = preload[i];
+            continue;
+        }
+        o = document.createElement('object');
+        o.data = preload[i];
+        
+        o.width  = 0;
+        o.height = 0;
+        
+        document.body.appendChild(o);
+    }
+    
+};
