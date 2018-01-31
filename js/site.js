@@ -239,8 +239,6 @@ elf(function () {
 	}
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
-	const isIE = navigator.appName.indexOf('Microsoft') === 0;
-
 });
 
 function IEProload(e) {
@@ -253,6 +251,8 @@ function OtherProload(e) {
 	o.width = o.height = 0;
 	document.body.appendChild(o);
 }
+const isIE = navigator.appName.indexOf('Microsoft') === 0;
+
 const proLoadMethod = isIE ? IEProload : OtherProload;
 
 ["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
