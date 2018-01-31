@@ -73,9 +73,13 @@ a:hover{color: #fff; text-decoration: underline;}
 #link-github:hover{background-color: #333;}
 #link-mail:hover{background-color: #595;}
 #link-wechat:hover img{display: block; top: 0; opacity: 1;}
-#link-sf:hover{background-color: #dd4b39;}
+#link-sf:hover {background-color: #dd4b39;}
 #link-plane:hover{background-color: rgb(235, 235, 235);}
-#link-plane:hover span{color: #888;word-break: normal;}
+#link-plane:hover span{color: #888;font-size: 15px;font-weight: bold}
+#link-plane:hover .tip1{top: -1.5em;}
+#link-plane:hover .tip2{top: 0;}
+#link-plane:hover .tip3{top: 1.5em;}
+
 li#link-wechat span{top: 0;}
 #card ul:after{content: ""; clear: both; display: block;}
 
