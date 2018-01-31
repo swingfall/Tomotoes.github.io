@@ -5,7 +5,9 @@ figure{display: block;}
 
 ul,ol,figure,form{margin: 0; padding: 0;}
 img{border: 0; vertical-align: middle;}
-
+#page img {
+    cursor: url('https://tomotoes.com/blog/img/pointer.cur'), auto !important;
+}
 html{background-image: url(https://tomotoes.com/blog/img/bg-light.jpg);}
 #page{display: -webkit-flex; display: flex; background-color: rgba(85,85,85,0); color: #eee; min-height: 100%;
 	-webkit-transition: background-color ease 5s;
