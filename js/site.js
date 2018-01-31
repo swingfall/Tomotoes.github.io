@@ -323,12 +323,6 @@ site.ScrollFollow = elf().Class({
 				props.position = "fixed";
 				props.top = `${this.marginTop }px`;
 				props.left = `${startLeft }px`;
-				// var screenSub = pageWidth - contentWidth - 46;
-				// var sideOffset = Math.max(0, screenSub) + (this.sideOffset + docElem.scrollLeft * side);
-				// if (pageWidth < contentWidth && side > 0) {
-				// 	sideOffset += screenSub;
-				// }
-				// props[this.side] = sideOffset + 'px';
 			}
 		} else if (pageWidth > this.minWidth) {
 			props.position = "absolute";
