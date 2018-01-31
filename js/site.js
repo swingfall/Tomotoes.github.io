@@ -103,109 +103,6 @@ var site = {
 
 			setLightColor();
 			setInterval(setLightColor, 60000);
-		},
-
-		list: function () {
-			hljs.initHighlighting();
-			site.VAR_AUTO_LOAD_ON_SCROLL && elf(window).on("scroll", site.Handlers.scrolling);
-		},
-
-		post: function () {
-			hljs.initHighlighting();
-			let disqusUrl = site.URL_DISCUS_COMMENT;
-			disqusUrl && elf().loadScript(disqusUrl, {});
-		},
-
-		search: function () {
-			site.URL_GOOGLE_API &&
-			site.VAR_GOOGLE_CUSTOM_SEARCH_ID &&
-			elf().loadScript(site.URL_GOOGLE_API, {
-				onload: site.Handlers.onGCSEAPILoad
-			});
-		},
-
-		timeline: function () {
-			elf("#timeline div.meta").forEach(function (item) {
-				let metaNode = elf(item);
-				metaNode.scrollFollow({
-					side: "left",
-					minWidth: 640,
-					sideOffset: -150,
-					marginTop: 10,
-					referId: elf().mark(item.parentNode),
-					wrapId: elf().mark(metaNode.parent().query("div.content")[0])
-				});
-			});
-		}
-	},
-	
-	Handlers: {
-		deferLoad: function () {
-			elf("article").toArray()
-				.filter(elf.dom.BoxModel.isViewable)
-				.filter(function (item) {
-					return item.getAttribute("content-loaded") != 1;
-				}).slice(0, site.VAR_AUTO_LOAD_ON_SCROLL).forEach(site.Handlers.loadArticle);
-			
-		},
-		
-		loadArticle: function (item) {
-			elf().ajax({
-				url: elf(item).firstChild().firstChild().attr("href"),
-				onsuccess: function (response) {
-					site.Handlers.showAjaxContent(item, response);
-				}
-			});
-		},
-		
-		showAjaxContent: function (node, response) {
-			let article = elf(node);
-			let content = response.split("<p class=\"meta\">")[1].split("</p>");
-			content.shift();
-			content = content.join("</p>");
-			content = content.split(/<\/article>/)[0];
-			article.query(">.article-content").html(content);
-			article.attr("content-loaded", 1);
-			article.query("pre").forEach(function (item) {
-				hljs.highlightBlock(item);
-			});
-		},
-		
-		scrolling: function () {
-			let timer = site.scrollingTimer;
-			if (timer) {
-				clearTimeout(timer);
-			}
-			site.scrollingTimer = setTimeout(site.Handlers.deferLoad, 1000);
-		},
-		
-		onGCSEAPILoad: function () {
-			google.load("search", "1", {
-				language: "zh-CN",
-				style: google.loader.themes.V2_DEFAULT,
-				callback: site.Handlers.onGCSEReady
-			});
-		},
-		
-		onGCSEReady: function() {
-			let customSearchControl = new google.search.CustomSearchControl(site.VAR_GOOGLE_CUSTOM_SEARCH_ID, {});
-			customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-			
-			let options = new google.search.DrawOptions();
-			options.setAutoComplete(true);
-			customSearchControl.draw("cse", options);
-			
-			let url = new elf.URL(location);
-			let query = url.getParameter("q");
-			if (query) {
-				query = decodeURIComponent(query);
-				document.title = elf().template(
-					site.TPL_SEARCH_TITLE,
-					site.VAR_SITE_NAME,
-					query
-				);
-				customSearchControl.execute(query);
-			}
 		}
 	}
 };
@@ -335,9 +232,5 @@ elf(function () {
 		elf(document.body).addClass("device-mobile");
 	}
 	site.Translation.translate(navigator.language || "zh-CN");
-	let module = document.body.className.replace(/page-type-/g, "").split(" ");
-	module.forEach(function (item) {
-		let initer = site.InitMap[item];
-		initer && elf(initer);
-	});
+	elf(site.InitMap.index);
 });
