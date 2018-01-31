@@ -1,11 +1,14 @@
 /* eslint-disable */
 elf().getPosition = elf.dom.BoxModel.getPosition = js.dom.BoxModel.getPosition = function (el, refer) {
-	let pos = {x: 0, y: 0};
-	
+	let pos = {
+		x: 0,
+		y: 0
+	};
+
 	let cStyle = el.currentStyle || document.defaultView.getComputedStyle(el, null);
-	
+
 	let isWebkit = navigator.userAgent.match(/Chrome|Safari/);
-	
+
 	if (!refer) {
 		if (cStyle.position == "absolute") {
 			pos.x = el.offsetLeft - (parseInt(cStyle.marginLeft, 10) || 0);
@@ -33,7 +36,7 @@ elf().getPosition = elf.dom.BoxModel.getPosition = js.dom.BoxModel.getPosition =
 	}
 	pos.left = pos.x;
 	pos.top = pos.y;
-	
+
 	return pos;
 };
 
@@ -58,8 +61,8 @@ var site = {
 				recently: "Recently"
 			}
 		},
-	
-		translate: function(language) {
+
+		translate: function (language) {
 			let l = language.split("-")[0];
 			if (l != "zh") {
 				l = site.Translation.lang.en;
@@ -70,7 +73,7 @@ var site = {
 						node.html(l[trans]);
 					}
 				});
-	
+
 				if (l.name) {
 					document.title = l.name;
 				}
@@ -119,35 +122,35 @@ site.ScrollFollow = elf().Class({
 			boundle();
 		}
 	},
-	
+
 	getDocumentElement: function () {
 		return elf().Chrome || elf().Safari ? document.body : document.documentElement;
 	},
-	
+
 	getScrollTop: function () {
 		return this.getDocumentElement().scrollTop;
 	},
-	
+
 	getStartTop: function () {
 		return this.node.getPosition(this.getDocumentElement()).y;
 	},
-	
+
 	getOriginTop: function () {
-		return typeof this.originTop !== "undefined" ? this.originTop
-			: this.originTop = this.node.getPosition(this.getDocumentElement()).y -
-				elf().getPosition(elf().g(this.wrapId), this.getDocumentElement()).y;
+		return typeof this.originTop !== "undefined" ? this.originTop :
+			this.originTop = this.node.getPosition(this.getDocumentElement()).y -
+			elf().getPosition(elf().g(this.wrapId), this.getDocumentElement()).y;
 	},
 
 	getStartLeft: function () {
 		return this.node.getPosition(this.getDocumentElement()).x;
 	},
-	
+
 	getOriginLeft: function () {
-		return typeof this.originLeft !== "undefined" ? this.originLeft
-			: this.originLeft = this.node.getPosition(this.getDocumentElement()).x -
-				elf().getPosition(elf().g(this.wrapId), this.getDocumentElement()).x;
+		return typeof this.originLeft !== "undefined" ? this.originLeft :
+			this.originLeft = this.node.getPosition(this.getDocumentElement()).x -
+			elf().getPosition(elf().g(this.wrapId), this.getDocumentElement()).x;
 	},
-	
+
 	getFollowingBottom: function () {
 		let content = elf().g(this.referId);
 		return content.offsetHeight +
@@ -155,33 +158,33 @@ site.ScrollFollow = elf().Class({
 			elf().getPosition(elf().g(this.wrapId), this.getDocumentElement()).y -
 			this.getFollowingHeight();
 	},
-	
+
 	getFollowingAbsBottom: function () {
 		let content = elf().g(this.referId);
 		return elf().getPosition(content, this.getDocumentElement()).y + content.offsetHeight;
 	},
-	
+
 	getFollowingHeight: function () {
 		return this.node[0].offsetHeight;
 	},
-	
+
 	getFollowingWidth: function () {
 		return this.node[0].offsetWidth;
 	},
-	
+
 	getFollowingMargin: function () {
 		return 0;
 	},
-	
+
 	getContentWidth: function () {
 		return elf().g(this.wrapId).offsetWidth;
 	},
-	
+
 	sideMap: {
 		left: -1,
 		right: 1
 	},
-	
+
 	_handler: function (ev) {
 		let scrollTop = this.getScrollTop();
 		let startTop = typeof this.startTop !== "undefined" ?
@@ -203,7 +206,10 @@ site.ScrollFollow = elf().Class({
 		let props = {};
 		if (scrollTop >= startTop - this.marginTop) {
 			if (followingBottom < scrollTop + followingHeight + this.marginTop) {
-				elf().mix(props, {position: "absolute", top: `${this.getFollowingBottom() }px`});
+				elf().mix(props, {
+					position: "absolute",
+					top: `${this.getFollowingBottom() }px`
+				});
 				props[this.side] = "";
 			} else {
 				props.position = "fixed";
@@ -233,37 +239,23 @@ elf(function () {
 	}
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
+	const isIE = navigator.appName.indexOf('Microsoft') === 0;
+
 });
 
-window.onload = function () {
- 
-    var i = 0,
-        max = 0,
-        o = null,
- 
-        preload = [
-            '/blog/js/jquery.min.js?v=1.0',
-            '/blog/js/live.min.js?v=1.0',
-            '/blog/js/live2d.min.js?v=1.0',
-            '/blog/js/main.min.js?v=1.0',
-            '/blog/js/script.min.js?v=1.0',
-            '/blog/js/wave.min.js?v=1.0'
-        ],
-        isIE = navigator.appName.indexOf('Microsoft') === 0;
- 
-    for (i = 0, max = preload.length; i < max; i += 1) {
-        preload[i] = window.location.href + preload[i];
-        if (isIE) {
-            new Image().src = preload[i];
-            continue;
-        }
-        o = document.createElement('object');
-        o.data = preload[i];
-        
-        o.width  = 0;
-        o.height = 0;
-        
-        document.body.appendChild(o);
-    }
-    
-};
+function IEProload(e) {
+	new Image().src = e;
+}
+
+function OtherProload(e) {
+	let o = document.createElement('object');
+	o.data = e;
+	o.width = o.height = 0;
+	document.body.appendChild(o);
+}
+const proLoadMethod = isIE ? IEProload : OtherProload;
+
+["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
+	e = `${window.location.href}/blog/js/${e}.min.js?v=1.0`;
+	proLoadMethod(e);
+})
