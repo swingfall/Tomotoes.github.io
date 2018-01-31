@@ -240,22 +240,21 @@ elf(function () {
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
 });
-
-function IEProload(e) {
-	new Image().src = e;
+window.onload=function (){
+	function IEProload(e) {
+		new Image().src = e;
+	}
+	
+	function OtherProload(e) {
+		let o = document.createElement('object');
+		o.data = e;
+		o.width = o.height = 0;
+		document.body.appendChild(o);
+	}
+	
+	const proLoadMethod = typeof InstallTrigger === 'undefined' ? IEProload : OtherProload;
+	
+	["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
+		proLoadMethod(`${window.location.href}/blog/js/${e}.min.js`);
+	})
 }
-
-function OtherProload(e) {
-	let o = document.createElement('object');
-	o.data = e;
-	o.width = o.height = 0;
-	document.body.appendChild(o);
-}
-const isIE = typeof InstallTrigger === 'undefined';
-
-const proLoadMethod = isIE ? IEProload : OtherProload;
-
-["jquery", "live", "live2d", "main", "script", "wave"].forEach(e => {
-	e = `${window.location.href}/blog/js/${e}.min.js?v=1.0`;
-	proLoadMethod(e);
-})
