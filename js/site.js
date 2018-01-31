@@ -49,13 +49,12 @@ var site = {
 				title: "Web Engineer, Freelancer",
 				works: "About",
 				blog: "Blog",
-				"google-plus": "+me",
-
+				"stack-overflow": "+me",
 				"work-for-free": "Work for Freedom",
 				"programming-skills": "Programming Skills",
 				"using-tools": "Using Tools",
 				"contact-me": "Contact Me",
-				"contact-me-description": "I undertake various types of Web development in long term. If you can provide a payment not lower than $20/h, feel free contact me: ",
+				"contact-me-description": "Hello, I am Simon, from the East.",
 				recently: "Recently"
 			}
 		},
