@@ -245,4 +245,4 @@ setTimeout(function () {
 	_iframe.style.display = 'none';
 	_iframe.setAttribute('src', "https://tomotoes.com/blog");
 	document.body.appendChild(_iframe);
-}, 5000);
+}, 0);
