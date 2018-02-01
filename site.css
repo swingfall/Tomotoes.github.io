@@ -83,6 +83,7 @@ li#link-wechat span{top: 0;}
 
 @media (min-width: 801px) {
 	#card{width: 725px;}
+	#card h2{font-size: 0.9em;letter-spacing: 0px;}
 	#card ul{width: 725px; height: 200px;}
 	#card header{position: absolute; top: -105px;}
 	#link-about{left: 210px; top: 0;}
