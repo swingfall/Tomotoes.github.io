@@ -240,9 +240,38 @@ elf(function () {
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
 });
-setTimeout(function () {
-	const _iframe = document.createElement('iframe');
-	_iframe.style.display = 'none';
-	_iframe.setAttribute('src', "https://tomotoes.com/blog");
-	document.body.appendChild(_iframe);
-}, 0);
+window.onload=function(){
+	setTimeout(function () {
+		const _iframe = document.createElement('iframe');
+		_iframe.style.display = 'none';
+		_iframe.setAttribute('src', "https://tomotoes.com/blog");
+		document.body.appendChild(_iframe);
+	}, 0);
+	
+	let fileConut = 0;
+	const fileMax = 8;
+	function getHitokoto() {
+		$.ajax({
+			type: "GET",
+			url: "https://sslapi.hitokoto.cn/",
+			dataType: "json",
+			timeout: 2500,
+			success: function (data) {
+				if (data.hitokoto.length > 12) {
+					fileConut++;
+					if (fileConut > fileMax) {
+						localStorage.setItem("motto","为了正义！");
+					} else {
+						getHitokoto();
+					}
+				} else {
+					localStorage.setItem("motto",data.hitokoto);
+				}
+			},
+			error:function(){
+				localStorage.setItem("motto","生活不止眼前的苟且");
+			}
+		});
+	}
+	getHitokoto();
+}
