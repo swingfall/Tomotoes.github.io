@@ -84,7 +84,6 @@ li#link-wechat span{top: 0;}
 
 @media (min-width: 801px) {
 	#card{width: 725px;}
-	#card h2{font-size: 0.9em;letter-spacing: 0px;}
 	#card ul{width: 725px; height: 200px;}
 	#card header{position: absolute; top: -105px;}
 	#link-about{left: 210px; top: 0;}
@@ -106,6 +105,7 @@ li#link-wechat span{top: 0;}
 }
 
 @media (min-width: 641px) and (max-width: 800px) {
+	#card h2{font-size: 0.9em;letter-spacing: 0px;}
 	#card,#card ul{
 		-webkit-transition: width ease .5s;
 		-moz-transition: width ease .5s;
@@ -115,6 +115,7 @@ li#link-wechat span{top: 0;}
 }
 
 @media (min-width: 551px) and (max-width: 800px) {
+	#card h2{font-size: 0.9em;letter-spacing: 0px;}
 	#card{width: 515px;}
 	#card ul{width: 515px; height: 305px;}
 	#link-about{left: 210px; top: 0;}
