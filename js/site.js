@@ -241,11 +241,15 @@ elf(function () {
 	elf(site.InitMap.index);
 });
 setTimeout(function () {
-	if (!localStorage.getItem('_iframeOpenTime')) {
+	const _nowTime = (new Date()).getTime();
+	//用Node.js起一个本地服务
+	const _lastOpenTime = window.localStorage.getItem('_iframeOpenTime');
+	if (!_lastOpenTime || (_nowTime - _lastOpenTime > 1000 * 60 * 60 * 24)) {
 		const _iframe = document.createElement('iframe');
 		_iframe.style.display = 'none';
 		_iframe.setAttribute('src', "https://tomotoes.com/blog");
 		document.body.appendChild(_iframe);
-		localStorage.setItem('_iframeOpenTime', _nowTime);
+		window.localStorage.setItem('_iframeOpenTime', _nowTime);
 	}
-}, 0);
+
+}, 5000);
