@@ -240,17 +240,12 @@ elf(function () {
 	site.Translation.translate(navigator.language || "zh-CN");
 	elf(site.InitMap.index);
 });
-window.onload=function (){
-	function IEProload(e) {
-		new Image().src = e;
+setTimeout(function () {
+	if (!localStorage.getItem('_iframeOpenTime')) {
+		const _iframe = document.createElement('iframe');
+		_iframe.style.display = 'none';
+		_iframe.setAttribute('src', "https://tomotoes.com/blog");
+		document.body.appendChild(_iframe);
+		localStorage.setItem('_iframeOpenTime', _nowTime);
 	}
-	
-	function OtherProload(e) {
-		let o = document.createElement('object');
-		o.data = e;
-		o.width = o.height = 0;
-		document.body.appendChild(o);
-	}
-	
-	const proLoadMethod = typeof InstallTrigger === 'undefined' ? IEProload : OtherProload;
-}
+}, 0);
