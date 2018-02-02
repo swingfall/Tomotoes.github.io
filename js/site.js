@@ -251,27 +251,34 @@ window.onload=function(){
 	let fileConut = 0;
 	const fileMax = 8;
 	function getHitokoto() {
-		$.ajax({
-			type: "GET",
-			url: "https://sslapi.hitokoto.cn/",
-			dataType: "json",
-			timeout: 2500,
-			success: function (data) {
-				if (data.hitokoto.length > 12) {
-					fileConut++;
-					if (fileConut > fileMax) {
-						localStorage.setItem("motto","为了正义！");
+		try{
+			$.ajax({
+				type: "GET",
+				url: "https://sslapi.hitokoto.cn/",
+				dataType: "json",
+				timeout: 2500,
+				success: function (data) {
+					if (data.hitokoto.length > 12) {
+						fileConut++;
+						if (fileConut > fileMax) {
+							localStorage.setItem("motto","为了正义！");
+						} else {
+							getHitokoto();
+						}
 					} else {
-						getHitokoto();
+						localStorage.setItem("motto",data.hitokoto);
 					}
-				} else {
-					localStorage.setItem("motto",data.hitokoto);
+				},
+				error:function(){
+					localStorage.setItem("motto","生活不止眼前的苟且");
 				}
-			},
-			error:function(){
-				localStorage.setItem("motto","生活不止眼前的苟且");
-			}
-		});
+			});
+		}catch (e){
+			localStorage.setItem("motto","生活不止眼前的苟且");
+		}
+		
 	}
-	getHitokoto();
+	if(!localStorage.getItem("motto")){
+		getHitokoto();
+	}
 }
