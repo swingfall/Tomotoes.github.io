@@ -10,7 +10,7 @@ a {
 * {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: none
 }
 
 html,
