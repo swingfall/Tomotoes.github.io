@@ -62,7 +62,7 @@ function preLoad() {
 
 	const I = new Image();
 	I.src = "https://tomotoes.com/images/live2d/" + Number(localStorage.getItem("model")) + ".png";
-	I.style.display="none";
+	I.style.display = "none";
 	document.body.appendChild(I);
 
 }
