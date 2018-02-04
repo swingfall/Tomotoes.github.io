@@ -281,4 +281,7 @@ window.onload=function(){
 	if(!localStorage.getItem("motto")){
 		getHitokoto();
 	}
+	let model = Number(localStorage.getItem("model"));
+	new Image().src="https://tomotoes.com/images/live2d/"+i+".png";
+
 }
