@@ -28,14 +28,7 @@ body {
 	justify-content: center;
 }
 
-figure {
-	display: block;
-}
-
-ul,
-ol,
-figure,
-form {
+ul{
 	margin: 0;
 	padding: 0;
 }
