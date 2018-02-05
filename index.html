@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit">
 	<link rel="icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -13,7 +14,8 @@
 	<link rel="prefetch" href="blog/" />
 	<link rel="next" href="blog/">
 	<link rel="preconnect" href="blog/">
-	<link rel="dns-prefetch" href="blog/">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
 			<header>
 				<img src="https://tomotoes.com/images/blog/avatar.jpg" width="80" height="80" />
 				<h1 data-translate="name" class="title">SimonMa</h1>
-				<h2 data-translate="title">你好，我叫 Simon，来自北方。</h2>
+				<h2 data-translate="title" id="typetitle" ></h2>
 			</header>
 			<ul>
 				<li id="link-blog">
