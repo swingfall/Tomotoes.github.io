@@ -10,7 +10,11 @@
 	<link rel="icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="source/site.css" />
+	<link rel="stylesheet" type="text/css" href="css/loading.css" />
+	<link rel="stylesheet" type="text/css" href="css/site.css" />
+	<script>
+		document.documentElement.className = 'js';
+	</script>
 	<link rel="prefetch" href="blog/" />
 	<link rel="next" href="blog/">
 	<link rel="preconnect" href="blog/">
@@ -18,64 +22,104 @@
 	<link rel="dns-prefetch" href="//cdn.bootcss.com">
 </head>
 
-<body>
-	<div id="page">
-		<div id="card">
-			<header>
-				<img src="https://tomotoes.com/images/blog/avatar.jpg" width="80" height="80" />
-				<h1 data-translate="name" class="title">SimonMa</h1>
-				<h2 data-translate="title" id="typetitle" ></h2>
-			</header>
-			<ul>
-				<li id="link-blog">
-					<a href="blog/">
-						<i class="fa fa-rss"></i>
-						<span data-translate="blog">博客</span>
-					</a>
-				</li>
-				<li id="link-about">
-					<a href="about/">
-						<i class="fa fa-smile-o"></i>
-						<span data-translate="about">关于</span>
-					</a>
-
-				</li>
-
-				<li id="link-mail" class="half">
-					<a href="mailto:1755811882@qq.com" class="mail">
-						<i class="fa fa-envelope"></i>
-						<span data-translate="email">联系我</span>
-					</a>
-				</li>
-				<li id="link-wechat" class="quarter">
-					<a title="WeChat">
-						<i class="fa fa-weixin"></i>
-						<img class="wechat-img" src="https://tomotoes.com/images/blog/wechatxl.jpg" height="95" width="95" alt="wechat">
-					</a>
-				</li>
-				<li id="link-github" class="quarter">
-					<a href="https://github.com/tomotoes" target="_blank">
-						<i class="fa fa-github"></i>
-						<span data-translate="Github">GitHub</span>
-					</a>
-				</li>
-				<li id="link-stack-overflow" class="quarter">
-					<a href="https://juejin.im/user/599b6d255188252447222dfd" target="_blank">
-						<i class="fa fa-stack-overflow"></i>
-						<span data-translate="stack-overflow">掘金</span>
-					</a>
-				</li>
-				<li id="link-more" class="quarter">
-					<a href="javascript:;">
-						<i class="fa fa-ellipsis-h"></i>
-					</a>
-				</li>
-			</ul>
+<body class="loading">
+	<svg class="hidden">
+		<symbol id="icon-arrow" viewBox="0 0 24 24">
+			<title>arrow</title>
+			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+		</symbol>
+		<symbol id="icon-drop" viewBox="0 0 24 24">
+			<title>drop</title>
+			<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"
+			/>
+			<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"
+			/>
+		</symbol>
+		<symbol id="icon-github" viewBox="0 0 32.6 31.8">
+			<title>github</title>
+			<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"
+			/>
+		</symbol>
+	</svg>
+	<main>
+		<div class="content content--intro">
+			<div class="content__inner">
+				<h2 class="content__title title">Simon Ma</h2>
+				<h3 class="content__subtitle">Front-end Web Developer</h3>
+				<a href="javascript:enter();" class="enter">enter</a>
+			</div>
+			<div class="shape-wrap">
+				<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
+					<path d="M -44,-50 C -52.71,28.52 15.86,8.186 184,14.69 383.3,22.39 462.5,12.58 638,14 835.5,15.6 987,6.4 1194,13.86 1661,30.68 1652,-36.74 1582,-140.1 1512,-243.5 15.88,-589.5 -44,-50 Z"
+					  pathdata:id="M -44,-50 C -137.1,117.4 67.86,445.5 236,452 435.3,459.7 500.5,242.6 676,244 873.5,245.6 957,522.4 1154,594 1593,753.7 1793,226.3 1582,-126 1371,-478.3 219.8,-524.2 -44,-50 Z"></path>
+				</svg>
+			</div>
 		</div>
-	</div>
-	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="source/site.js"></script>
-	<script src="https://hm.baidu.com/hm.js?ac588a7c3137281d3c4f1032a9e4e46e"></script>
+		<div class="content content--fixed">
+				<div id="page">
+					<div id="card">
+						<header>
+							<img src="https://tomotoes.com/images/blog/avatar.jpg" width="80" height="80" />
+							<h1 data-translate="name" class="title">SimonMa</h1>
+							<h2 data-translate="title" id="typetitle"></h2>
+						</header>
+						<ul>
+							<li id="link-blog">
+								<a href="blog/">
+									<i class="fa fa-rss"></i>
+									<span data-translate="blog">博客</span>
+								</a>
+							</li>
+							<li id="link-about">
+								<a href="about/">
+									<i class="fa fa-smile-o"></i>
+									<span data-translate="about">关于</span>
+								</a>
+
+							</li>
+
+							<li id="link-mail" class="half">
+								<a href="mailto:1755811882@qq.com" class="mail">
+									<i class="fa fa-envelope"></i>
+									<span data-translate="email">联系我</span>
+								</a>
+							</li>
+							<li id="link-wechat" class="quarter">
+								<a title="WeChat">
+									<i class="fa fa-weixin"></i>
+									<img class="wechat-img" src="https://tomotoes.com/images/blog/wechatxl.jpg" height="95" width="95" alt="wechat">
+								</a>
+							</li>
+							<li id="link-github" class="quarter">
+								<a href="https://github.com/tomotoes" target="_blank">
+									<i class="fa fa-github"></i>
+									<span data-translate="Github">GitHub</span>
+								</a>
+							</li>
+							<li id="link-stack-overflow" class="quarter">
+								<a href="https://juejin.im/user/599b6d255188252447222dfd" target="_blank">
+									<i class="fa fa-stack-overflow"></i>
+									<span data-translate="stack-overflow">掘金</span>
+								</a>
+							</li>
+							<li id="link-more" class="quarter">
+								<a href="javascript:;">
+									<i class="fa fa-ellipsis-h"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/charming.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/loading.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/site.js"></script>
+		<script src="https://hm.baidu.com/hm.js?ac588a7c3137281d3c4f1032a9e4e46e"></script>
+	</main>
 </body>
+
 
 </html>

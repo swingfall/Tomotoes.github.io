@@ -1,12 +1,3 @@
-body {
-	cursor: url('https://tomotoes.com/images/blog/default.cur'), auto !important;
-}
-
-img,
-a {
-	cursor: url('https://tomotoes.com/images/blog/pointer.cur'), auto !important;
-}
-
 * {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -29,6 +20,15 @@ body {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	cursor: url('https://tomotoes.com/images/blog/default.cur'), auto !important;
+}
+
+img,
+a {
+	cursor: url('https://tomotoes.com/images/blog/pointer.cur'), auto !important;
 }
 
 ul {
@@ -39,10 +39,6 @@ ul {
 img {
 	border: 0;
 	vertical-align: middle;
-}
-
-html {
-	background-image: url('https://tomotoes.com/images/blog/bg-light.jpg');
 }
 
 #page {
@@ -56,12 +52,12 @@ html {
 	transition: background-color ease 5s;
 }
 
-a {
+#page a {
 	color: #eee;
 	text-decoration: none;
 }
 
-a:hover {
+#page a:hover {
 	color: #fff;
 	text-decoration: underline;
 }
