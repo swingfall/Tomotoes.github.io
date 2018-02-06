@@ -179,10 +179,7 @@ function messenger(el) {
 }
 
 function enter() {
-  setTimeout(() => {
-    setLightColor();
-    setInterval(setLightColor, 60000);
-    messenger($("#typetitle"));
-  }, 300);
-
+  setLightColor();
+  setInterval(setLightColor, 60000);
+  messenger($("#typetitle"));
 }

@@ -234,14 +234,3 @@ main {
 		font-size: 2em;
 	}
 }
-
-canvas {
-	display: inline-block;
-	position: absolute;
-	bottom: 2%;
-	z-index: 10;
-}
-
-#buffer {
-	display: none;
-}
