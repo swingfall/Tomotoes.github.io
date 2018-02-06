@@ -214,6 +214,7 @@ main {
 	white-space: pre;
 	color: var(--color-enter);
 	pointer-events: auto;
+	z-index: 999;
 }
 
 .enter:hover,
@@ -232,4 +233,15 @@ main {
 	.content__title {
 		font-size: 2em;
 	}
+}
+
+canvas {
+	display: inline-block;
+	position: absolute;
+	bottom: 2%;
+	z-index: 10;
+}
+
+#buffer {
+	display: none;
 }

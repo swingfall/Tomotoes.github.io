@@ -47,6 +47,8 @@
 				<h2 class="content__title title">Simon Ma</h2>
 				<h3 class="content__subtitle">Front-end Web Developer</h3>
 				<a href="javascript:enter();" class="enter">enter</a>
+				<canvas id="buffer"></canvas>
+				<canvas id="canvas"></canvas>
 			</div>
 			<div class="shape-wrap">
 				<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
@@ -56,59 +58,59 @@
 			</div>
 		</div>
 		<div class="content content--fixed">
-				<div id="page">
-					<div id="card">
-						<header>
-							<img src="https://tomotoes.com/images/blog/avatar.jpg" width="80" height="80" />
-							<h1 data-translate="name" class="title">SimonMa</h1>
-							<h2 data-translate="title" id="typetitle"></h2>
-						</header>
-						<ul>
-							<li id="link-blog">
-								<a href="blog/">
-									<i class="fa fa-rss"></i>
-									<span data-translate="blog">博客</span>
-								</a>
-							</li>
-							<li id="link-about">
-								<a href="about/">
-									<i class="fa fa-smile-o"></i>
-									<span data-translate="about">关于</span>
-								</a>
+			<div id="page">
+				<div id="card">
+					<header>
+						<img src="https://tomotoes.com/images/blog/avatar.jpg" width="80" height="80" />
+						<h1 data-translate="name" class="title">SimonMa</h1>
+						<h2 data-translate="title" id="typetitle"></h2>
+					</header>
+					<ul>
+						<li id="link-blog">
+							<a href="blog/">
+								<i class="fa fa-rss"></i>
+								<span data-translate="blog">博客</span>
+							</a>
+						</li>
+						<li id="link-about">
+							<a href="about/">
+								<i class="fa fa-smile-o"></i>
+								<span data-translate="about">关于</span>
+							</a>
 
-							</li>
+						</li>
 
-							<li id="link-mail" class="half">
-								<a href="mailto:1755811882@qq.com" class="mail">
-									<i class="fa fa-envelope"></i>
-									<span data-translate="email">联系我</span>
-								</a>
-							</li>
-							<li id="link-wechat" class="quarter">
-								<a title="WeChat">
-									<i class="fa fa-weixin"></i>
-									<img class="wechat-img" src="https://tomotoes.com/images/blog/wechatxl.jpg" height="95" width="95" alt="wechat">
-								</a>
-							</li>
-							<li id="link-github" class="quarter">
-								<a href="https://github.com/tomotoes" target="_blank">
-									<i class="fa fa-github"></i>
-									<span data-translate="Github">GitHub</span>
-								</a>
-							</li>
-							<li id="link-stack-overflow" class="quarter">
-								<a href="https://juejin.im/user/599b6d255188252447222dfd" target="_blank">
-									<i class="fa fa-stack-overflow"></i>
-									<span data-translate="stack-overflow">掘金</span>
-								</a>
-							</li>
-							<li id="link-more" class="quarter">
-								<a href="javascript:;">
-									<i class="fa fa-ellipsis-h"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+						<li id="link-mail" class="half">
+							<a href="mailto:1755811882@qq.com" class="mail">
+								<i class="fa fa-envelope"></i>
+								<span data-translate="email">联系我</span>
+							</a>
+						</li>
+						<li id="link-wechat" class="quarter">
+							<a title="WeChat">
+								<i class="fa fa-weixin"></i>
+								<img class="wechat-img" src="https://tomotoes.com/images/blog/wechatxl.jpg" height="95" width="95" alt="wechat">
+							</a>
+						</li>
+						<li id="link-github" class="quarter">
+							<a href="https://github.com/tomotoes" target="_blank">
+								<i class="fa fa-github"></i>
+								<span data-translate="Github">GitHub</span>
+							</a>
+						</li>
+						<li id="link-stack-overflow" class="quarter">
+							<a href="https://juejin.im/user/599b6d255188252447222dfd" target="_blank">
+								<i class="fa fa-stack-overflow"></i>
+								<span data-translate="stack-overflow">掘金</span>
+							</a>
+						</li>
+						<li id="link-more" class="quarter">
+							<a href="javascript:;">
+								<i class="fa fa-ellipsis-h"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<script src="js/imagesloaded.pkgd.min.js"></script>

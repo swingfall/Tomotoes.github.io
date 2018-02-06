@@ -291,6 +291,12 @@ li#link-wechat span {
 	}
 }
 
+@media (max-width: 800px) {
+	#canvas {
+		display: none;
+	}
+}
+
 @media (min-width: 641px) and (max-width: 800px) {
 	#card,
 	#card ul {
