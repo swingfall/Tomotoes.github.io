@@ -74,8 +74,6 @@ img {
 	height: 105px;
 	padding: 10px 0 0 100px;
 	color: rgb(236, 236, 236);
-	-webkit-transition: color ease 5s;
-	transition: color ease 5s;
 }
 
 #card header img {
@@ -444,8 +442,6 @@ li#link-wechat span {
 }
 
 .title {
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
 	color: #fff;
 	-webkit-animation: jumpWhite 1.5s ease-in-out infinite alternate;
 	animation: jumpWhite 1.5s ease-in-out infinite alternate;

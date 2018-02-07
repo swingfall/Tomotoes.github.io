@@ -18,40 +18,6 @@ function setLightColor() {
   $("#page").css("background-color", `rgba(85,85,85,${ getDayLight() })`);
 }
 
-let fileConut = 0;
-const fileMax = 8;
-
-function getHitokoto() {
-  if (localStorage.getItem("motto")) {
-    return;
-  }
-  try {
-    $.ajax({
-      type: "GET",
-      url: "https://sslapi.hitokoto.cn/",
-      dataType: "json",
-      timeout: 2500,
-      success: function (data) {
-        if (data.hitokoto.length > 12) {
-          fileConut++;
-          if (fileConut > fileMax) {
-            localStorage.setItem("motto", "为了正义！");
-          } else {
-            getHitokoto();
-          }
-        } else {
-          localStorage.setItem("motto", data.hitokoto);
-        }
-      },
-      error: function () {
-        localStorage.setItem("motto", "生活不止眼前的苟且");
-      }
-    });
-  } catch (e) {
-    localStorage.setItem("motto", "生活不止眼前的苟且");
-  }
-
-}
 
 function preLoad() {
   const _iframe = document.createElement("iframe");
@@ -81,7 +47,6 @@ function typetitle() {
 
 window.onload = function () {
   preLoad();
-  getHitokoto();
 };
 
 function messenger(el) {
@@ -178,7 +143,11 @@ function messenger(el) {
   m.init();
 }
 
+const ofades = [...document.querySelector("#card").querySelectorAll(".fade")];
 function enter() {
+  setTimeout(()=>{
+    ofades.forEach(e => e.classList.add("in"));
+  }, 400);
   setLightColor();
   setInterval(setLightColor, 60000);
   messenger($("#typetitle"));

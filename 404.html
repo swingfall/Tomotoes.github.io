@@ -2,8 +2,11 @@
 <html lang="zh-CN">
 <head>  
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="renderer" content="webkit">
+	<link rel="icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="https://tomotoes.com/images/blog/favicon.ico" type="image/x-icon" />
 	<title>404 - 页面未找到</title>  
     <style type="text/css">  
     body {  
@@ -24,7 +27,6 @@
         font-size: 16px  
     }  
       
-    /*针对小屏幕的优化*/  
     @media screen and (max-width: 600px) {   
         body{  
             margin: 0 10px;  
@@ -44,12 +46,12 @@
 </head>  
 <body>  
     <script>   
-    var i = 6;  //这里是倒计时的秒数  
+    var i = 6; 
     var intervalid;   
     intervalid = setInterval("cutdown()", 1000);   
     function cutdown() {   
         if (i == 0) {   
-            window.location.href = "http://tomotoes.com"; //倒计时完成后跳转的地址  
+            window.location.href = "http://tomotoes.com";
             clearInterval(intervalid);   
         }   
         document.getElementById("mes").innerHTML = i;   
