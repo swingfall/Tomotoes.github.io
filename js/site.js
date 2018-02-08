@@ -15,7 +15,8 @@ function getDayLight() {
 }
 
 function setLightColor() {
-  $("#page").css("background-color", `rgba(85,85,85,${ getDayLight() })`);
+  $("#page").css("background-color", `rgba(85,85,85,${ getDayLight() })`); 
+  new Date().getHours() < 17 && (title.style = "color:#666");
 }
 
 
@@ -144,8 +145,9 @@ function messenger(el) {
 }
 
 const ofades = [...document.querySelector("#card").querySelectorAll(".fade")];
+
 function enter() {
-  setTimeout(()=>{
+  setTimeout(() => {
     ofades.forEach(e => e.classList.add("in"));
   }, 400);
   setLightColor();
