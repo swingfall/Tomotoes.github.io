@@ -146,6 +146,7 @@ main {
 }
 
 .content__subtitle {
+	color:#ccc;
 	font: var(--font-alt);
 	font-size: 1.5em;
 	padding: 0.5em 0 0 0;
@@ -175,7 +176,7 @@ main {
 
 @media screen and (max-width: 50em) {
 	.content--intro .content__inner {
-		padding-top: 12em;
+		/* padding-top: 12em; */
 	}
 	.content__title {
 		font-size: 2em;
