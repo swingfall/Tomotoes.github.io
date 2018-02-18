@@ -154,13 +154,12 @@ main {
 }
 
 .enter {
+	color: var(--color-enter);
 	margin: 6vh 0 0 0;
 	font-size: 1em;
 	letter-spacing: 3px;
-	cursor: pointer;
 	font-weight: bold;
 	white-space: pre;
-	color: var(--color-enter);
 	pointer-events: auto;
 	z-index: 999;
 }
@@ -175,9 +174,6 @@ main {
 }
 
 @media screen and (max-width: 50em) {
-	.content--intro .content__inner {
-		/* padding-top: 12em; */
-	}
 	.content__title {
 		font-size: 2em;
 	}
