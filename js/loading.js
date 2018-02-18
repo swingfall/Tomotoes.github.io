@@ -134,4 +134,8 @@ const enterHoverOutFn = () => {
 init();
 const ifades = [...document.querySelector(".content__inner").querySelectorAll(".fade")];
 ifades.forEach(e => e.classList.add("in"));
+
+window.addEventListener("beforeunload", function () {
+  ifades.forEach(e => e.classList.remove("in"));
+});
 setTimeout(()=>$(".content__subtitle").html(`<span>${ [..."Web Front-End Developer"].join("</span><span>") }</span>`),300);
