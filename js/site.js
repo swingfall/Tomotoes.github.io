@@ -47,7 +47,7 @@ function typetitle() {
 }
 
 window.onload = function () {
-  preLoad();
+  setTimeout(preLoad, 500);
 };
 
 function messenger(el) {
