@@ -23,11 +23,11 @@ function setLightColor() {
 function preLoad() {
   const _iframe = document.createElement("iframe");
   _iframe.style.display = "none";
-  _iframe.setAttribute("src", "https://tomotoes.com/blog");
+  _iframe.setAttribute("src", "//tomotoes.com/blog");
   document.body.appendChild(_iframe);
 
   const I = new Image();
-  I.src = `https://tomotoes.com/images/live2d/${ Number(localStorage.getItem("model")) }.png`;
+  I.src = `//tomotoes.com/images/live2d/${ Number(localStorage.getItem("model")) }.png`;
   I.style.display = "none";
   document.body.appendChild(I);
 

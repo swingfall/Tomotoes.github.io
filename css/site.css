@@ -23,12 +23,12 @@ body {
 	min-height: 100vh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	cursor: url('https://tomotoes.com/images/blog/default.cur'), auto !important;
+	cursor: url('//tomotoes.com/images/blog/default.cur'), auto !important;
 }
 
 img,
 a {
-	cursor: url('https://tomotoes.com/images/blog/pointer.cur'), auto !important;
+	cursor: url('//tomotoes.com/images/blog/pointer.cur'), auto !important;
 }
 
 ul {

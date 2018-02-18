@@ -71,7 +71,7 @@ main {
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	background-image: url('https://tomotoes.com/images/blog/bg-light.jpg');
+	background-image: url('//tomotoes.com/images/blog/bg-light.jpg');
 }
 
 .content--intro {
